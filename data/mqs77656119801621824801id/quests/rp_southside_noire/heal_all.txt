@@ -1,0 +1,277 @@
+{
+	"id": "heal_all",
+	"name": "Лечение",
+	"desc": "Хуже уже не будет - нужно немного побегать. Совсем чуть-чуть.",
+	"success": "Хотя бы в таком состоянии помогают сразу. За дополнительную плату.",
+	"active": true,
+	"stop_anytime": true,
+	"fail_ondeath": true,
+	"cool_down": 0,
+	"cool_down_onfail": 60,
+	"cooldow_perply": true,
+	"team_whitelist": {
+		"TEAM_POLICE": true,
+		"TEAM_WARDEN": true,
+		"TEAM_DETECTIVE": true,
+		"TEAM_SWAT": true,
+		"TEAM_POLICESV": true,
+		"TEAM_FBI": true,
+		"TEAM_FBISWAT": true,
+		"TEAM_REF": true,
+		"TEAM_FIREFIGHTER": true,
+		"TEAM_MAYOR": true,
+		"TEAM_INS": true,
+		"TEAM_TRAFFIC": true
+	},
+	"objects": [
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 3,
+			"events": [
+				[
+					"Check Player HP",
+					[28]
+				]
+			]
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Поговорите с терапевтом",
+			"npc": "civilian_med",
+			"dialog": 8,
+			"autostart": true
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Отнесите форму в приёмную на втором этаже",
+			"npc": "civilian_med2",
+			"dialog": 6
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Возьмите справку у терапевта",
+			"npc": "civilian_med",
+			"dialog": 10
+		},
+		{
+			"type": "Wait time",
+			"desc": "Найдите нужную справку в стопке",
+			"time": 8
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Отнесите справку в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 10
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Попросите терапевта поставить печать",
+			"npc": "civilian_med",
+			"dialog": 13
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Вернитесь в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 12
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Получите подпись терапевта",
+			"npc": "civilian_med",
+			"dialog": 16
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Вернитесь в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 14
+		},
+		{
+			"type": "Wait time",
+			"desc": "Поищите главврача",
+			"time": 12
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Вернитесь в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 16
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Попросите терапевта расписаться за главврача",
+			"npc": "civilian_med",
+			"dialog": 18
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Вернитесь в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 18
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Возьмите у терапевта бланк разрешения",
+			"npc": "civilian_med",
+			"dialog": 21
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Отнесите разрешение в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 22
+		},
+		{
+			"type": "Wait time",
+			"desc": "Дождитесь ответа из ратуши",
+			"time": 20
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Узнайте в приёмной, что дальше",
+			"npc": "civilian_med2",
+			"dialog": 24,
+			"autostart": true
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Оплатите лечение у терапевта",
+			"npc": "civilian_med",
+			"dialog": 26
+		},
+		{
+			"type": "Wait time",
+			"desc": "Дождитесь, пока терапевт пообедает",
+			"time": 30
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Поговорите с терапевтом",
+			"npc": "civilian_med",
+			"dialog": 29,
+			"autostart": true
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Оплатите счёт",
+			"npc": "civilian_med",
+			"dialog": 30,
+			"autostart": true
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Вернитесь в приёмную",
+			"npc": "civilian_med2",
+			"dialog": 26
+		},
+		{
+			"type": "Talk to NPC",
+			"desc": "Поговорите с санитаром",
+			"npc": "civilian_med2",
+			"dialog": 30,
+			"autostart": true
+		},
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 15
+		},
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 4,
+			"events": [
+				[
+					"Cinematic camera",
+					{
+						"endtime": 5,
+						"text": "",
+						"cam_start": {
+							"pos": "[7533 4150 20]",
+							"ang": "{-12 90 0}",
+							"fov": 75
+						},
+						"cam_end": {
+							"pos": "[7533 4300 20]",
+							"ang": "{-15 90 0}",
+							"fov": 75
+						},
+						"cam_speed": 5,
+						"fov_speed": 5,
+						"effect": true
+					}
+				],
+				[
+					"Set HP",
+					[true]
+				]
+			]
+		},
+		{
+			"type": "End of quest",
+			"desc": "Вылечили. Всего-то пара бумажек.",
+			"reward": {
+				"DarkRP money": [-95]
+			},
+			"events": [
+				[
+					"Teleport player",
+					["[7532.5559 5345.0352 -55.9688]","{0 -90 0}",true]
+				]
+			]
+		},
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 5
+		},
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 4,
+			"events": [
+				[
+					"Cinematic camera",
+					{
+						"endtime": 5,
+						"text": "",
+						"cam_start": {
+							"pos": "[7533 4150 20]",
+							"ang": "{-12 90 0}",
+							"fov": 75
+						},
+						"cam_end": {
+							"pos": "[7533 4300 20]",
+							"ang": "{-15 90 0}",
+							"fov": 75
+						},
+						"cam_speed": 5,
+						"fov_speed": 5,
+						"effect": true
+					}
+				],
+				[
+					"Set HP",
+					[true]
+				]
+			]
+		},
+		{
+			"type": "End of quest",
+			"desc": "Хотя бы в таком состоянии помогают сразу. За дополнительную плату.",
+			"reward": {
+				"DarkRP money": [-233]
+			},
+			"events": [
+				[
+					"Teleport player",
+					["[7532.5559 5345.0352 -55.9688]","{0 -90 0}",true]
+				]
+			]
+		}
+	],
+	"team_blacklist": true
+}

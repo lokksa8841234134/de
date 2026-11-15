@@ -1,0 +1,16 @@
+"darkrp"
+{
+	"base"		"basebox"
+	"title"		"DarkRP"
+	"version"	"3.0.0"
+	"category"	"rp"
+	"menusystem"	"1"
+
+	"author_name"	"Mactavish"
+	"author_email"	""
+	"author_url"	""
+
+	"icon"		""
+	"info"		""
+	"hide"		"0"
+}

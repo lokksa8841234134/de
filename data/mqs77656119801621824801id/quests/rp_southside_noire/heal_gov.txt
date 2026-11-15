@@ -1,0 +1,77 @@
+{
+	"id": "heal_gov",
+	"name": "Лечение",
+	"desc": "Хуже уже не будет - нужно немного побегать. Совсем чуть-чуть.",
+	"success": "Хотя бы в таком состоянии помогают сразу. За дополнительную плату.",
+	"active": true,
+	"stop_anytime": true,
+	"fail_ondeath": true,
+	"cool_down": 0,
+	"cool_down_onfail": 60,
+	"cooldow_perply": true,
+	"team_whitelist": {
+		"TEAM_POLICE": true,
+		"TEAM_WARDEN": true,
+		"TEAM_DETECTIVE": true,
+		"TEAM_SWAT": true,
+		"TEAM_POLICESV": true,
+		"TEAM_FBI": true,
+		"TEAM_FBISWAT": true,
+		"TEAM_REF": true,
+		"TEAM_FIREFIGHTER": true,
+		"TEAM_MAYOR": true,
+		"TEAM_INS": true,
+		"TEAM_TRAFFIC": true
+	},
+	"objects": [
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 5
+		},
+		{
+			"type": "Wait time",
+			"desc": "Подождите лечащего врача",
+			"time": 4,
+			"events": [
+				[
+					"Cinematic camera",
+					{
+						"endtime": 5,
+						"text": "",
+						"cam_start": {
+							"pos": "[7533 4150 20]",
+							"ang": "{-12 90 0}",
+							"fov": 75
+						},
+						"cam_end": {
+							"pos": "[7533 4300 20]",
+							"ang": "{-15 90 0}",
+							"fov": 75
+						},
+						"cam_speed": 5,
+						"fov_speed": 5,
+						"effect": true
+					}
+				],
+				[
+					"Set HP",
+					[true]
+				]
+			]
+		},
+		{
+			"type": "End of quest",
+			"desc": "Хотя бы в таком состоянии помогают сразу. За дополнительную плату.",
+			"reward": {
+				"DarkRP money": [-233]
+			},
+			"events": [
+				[
+					"Teleport player",
+					["[7532.5559 5345.0352 -55.9688]","{0 -90 0}",true]
+				]
+			]
+		}
+	]
+}
